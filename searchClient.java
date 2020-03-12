@@ -16,6 +16,7 @@ public class searchClient{
       System.out.print(i+" ");
     }
     System.out.println();
+  }
   public void selectionSort(){
     for(int i=0; i<elements; i++){
       int min = arrayToBeSorted.get(i);
