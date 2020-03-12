@@ -16,6 +16,22 @@ public class searchClient{
       System.out.print(i+" ");
     }
     System.out.println();
+  public void selectionSort(){
+    for(int i=0; i<elements; i++){
+      int min = arrayToBeSorted.get(i);
+      int minIndex = i;
+      for(int j=i; j<elements; j++){
+        if(arrayToBeSorted.get(j) < min){
+          min = arrayToBeSorted.get(j);
+          minIndex = j;
+        }
+      }
+      int temp = arrayToBeSorted.get(i);
+      arrayToBeSorted.set(i, min);
+      arrayToBeSorted.set(minIndex, temp);
+      steps++;
+      printArray();
+    }
   }
   public void bubbleSort(){
     boolean loop = true;
@@ -38,5 +54,5 @@ public class searchClient{
       }
     }
   }
-  
+
 }
