@@ -55,5 +55,24 @@ public class searchClient{
       }
     }
   }
-
+  public ArrayList mergeArrays(ArrayList<Integer> left, ArrayList<Integer> right){
+    
+  }
+  public ArrayList mergeSort(ArrayList<Integer> fullArray){
+    ArrayList<Integer> left = new ArrayList<>();
+    ArrayList<Integer> right = new ArrayList<>();
+    for(int i=0; i<fullArray.size(); i++){
+      if(fullArray.size() == 1){
+        return fullArray;
+      }
+      else if(i<((fullArray.size())/2)){
+        left.add(fullArray.get(i));
+      }
+      else{
+        right.add(fullArray.get(i));
+      }
+    }
+    ArrayList<Integer> sortedLeft = mergeSort(left);
+    ArrayList<Integer> sortedRight = mergeSort(right);
+  }
 }
