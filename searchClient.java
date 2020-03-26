@@ -55,8 +55,35 @@ public class searchClient{
       }
     }
   }
-  public ArrayList mergeArrays(ArrayList<Integer> left, ArrayList<Integer> right){
-    
+  public ArrayList<Integer> mergeArrays(ArrayList<Integer> left, ArrayList<Integer> right){
+    int leftPointer = 0;
+    int rightPointer = 0;
+    ArrayList<Integer> sortedArrays = new ArrayList<>();
+    while(leftPointer < left.size() && rightPointer < right.size()){
+      if(left.get(leftPointer) < right.get(rightPointer)){
+        sortedArrays.add(left.get(leftPointer));
+        leftPointer++;
+      }
+      else{
+        sortedArrays.add(right.get(rightPointer));
+        rightPointer++;
+      }
+    }
+    if(leftPointer != left.size()){
+      while (leftPointer < left.size()-1){
+        sortedArrays.add(left.get(leftPointer));
+        leftPointer++;
+      }
+      System.out.println("leftfinish");
+    }
+    else if(rightPointer != right.size()){
+      while (rightPointer < right.size()){
+        sortedArrays.add(right.get(rightPointer));
+        rightPointer++;
+      }
+      System.out.println("rightfinish");
+    }
+    return sortedArrays;
   }
   public ArrayList mergeSort(ArrayList<Integer> fullArray){
     ArrayList<Integer> left = new ArrayList<>();
